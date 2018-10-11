@@ -4,9 +4,13 @@
    background-color: #f5f6f6
    &__content
       position: relative
-      height: 737px
+      height: 904px
       color: $white
       +cover
+      &::after
+         +coverdiv
+         background: rgba($black, .25)
+         content: ''
       +xs
          height: auto
          padding: 70px 0 100px
@@ -295,7 +299,6 @@
       width: 321px
       height: 170px
       +f('geo400')
-      cursor: default
       pointer-events: none
       +xs
          flex: 0 1 auto
@@ -397,7 +400,7 @@
          overflow: hidden
          height: 100%
          border-radius: 10px
-         border: 2px solid transparent
+         border: 2px solid #dbdbdb
       &-label
          position: absolute
          min-width: 87px
@@ -501,53 +504,43 @@
             padding: 15px 8px 15px 23px
          #{$parent}_10 &
             padding: 15px 8px 15px 41px
-         #{$parent}_1:hover &,
-         #{$parent}_1.is-current &
+         #{$parent}_1:hover &
             background-color: #3eb4f0
             &::before, &::after
                background-color: #3eb4f0
-         #{$parent}_2:hover &,
-         #{$parent}_2.is-current &
+         #{$parent}_2:hover &
             background-color: #3ed2f0
             &::before, &::after
                background-color: #3ed2f0
-         #{$parent}_3:hover &,
-         #{$parent}_3.is-current &
+         #{$parent}_3:hover &
             background-color: #3ef0f0
             &::before, &::after
                background-color: #3ef0f0
-         #{$parent}_4:hover &,
-         #{$parent}_4.is-current &
+         #{$parent}_4:hover &
             background-color: #3ef0d2
             &::before, &::after
                background-color: #3ef0d2
-         #{$parent}_5:hover &,
-         #{$parent}_5.is-current &
+         #{$parent}_5:hover &
             background-color: #3ef0b5
             &::before, &::after
                background-color: #3ef0b5
-         #{$parent}_6:hover &,
-         #{$parent}_6.is-current &
+         #{$parent}_6:hover &
             background-color: #3ef097
             &::before, &::after
                background-color: #3ef097
-         #{$parent}_7:hover &,
-         #{$parent}_7.is-current &
+         #{$parent}_7:hover &
             background-color: #3ef079
             &::before, &::after
                background-color: #3ef079
-         #{$parent}_8:hover &,
-         #{$parent}_8.is-current &
+         #{$parent}_8:hover &
             background-color: #3ef05c
             &::before, &::after
                background-color: #3ef05c
-         #{$parent}_9:hover &,
-         #{$parent}_9.is-current &
+         #{$parent}_9:hover &
             background-color: #3ef03e
             &::before, &::after
                background-color: #3ef03e
-         #{$parent}_10:hover &,
-         #{$parent}_10.is-current &
+         #{$parent}_10:hover &
             background-color: #5cf03e
             &::before, &::after
                background-color: #5cf03e
@@ -593,8 +586,7 @@
          letter-spacing: -0.4px
          transition: .3s ease-in-out
          +f('geo400')
-         #{$parent}:hover &,
-         #{$parent}.is-current &
+         #{$parent}:hover &
             color: #fff
       &-btn
          pointer-events: none
@@ -626,6 +618,7 @@
             +f('rob400', 30, 30)
             color: #2a2a2a
             transition: .3s ease-in-out
+            cursor: default
             #{$parent}_1.is-completed &,
             #{$parent}_1.is-current &
                 border-color: #3eb4f0

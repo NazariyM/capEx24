@@ -48,40 +48,16 @@ body
          color: #fff
          background-color: $color1
    &_blue
-      padding: 17px 56px 16px
+      padding: 18px 56px 15px
       background-color: $color1
       color: #fff
-      text-transform: none
       +f('geo400', 18)
+      box-shadow: 0 10px 20px rgba(1, 114, 156, 0.5)
       &:hover
-         background-color: $white
-         color: $color1
+         box-shadow: none
    &_white
       min-width: 110px
       padding: 6px 5px 4px
       +f('geo500', 11, 20)
       color: #181818
       background-color: $white
-      transition: .5s
-      &:hover
-         &:after, &:before
-            transform: scale(1)
-      &:after, &:before
-         width: 100%
-         height: 100%
-         z-index: 3
-         content: ''
-         position: absolute
-         top: 0
-         left: 0
-         transform: scale(0)
-         transition: .5s
-         border-radius: 18px
-      &:before
-         border-bottom: 1px solid $color1
-         border-left: 1px solid $color1
-         transform-origin: 0 100%
-      &:after
-         border-top: 1px solid $color1
-         border-right: 1px solid $color1
-         transform-origin: 100% 0
