@@ -1,0 +1,36 @@
+//fonts
+=font($alias, $name)
+   @font-face
+      font-family: $alias
+      src: url("../fonts/" + $name + ".eot")
+      src: url("../fonts/" + $name + ".eot?#iefix") format("embedded-opentype"), url("../fonts/" + $name + ".woff") format("woff"), url("../fonts/" + $name + ".woff2") format("woff2"), url("../fonts/" + $name + ".ttf") format("truetype")
+      font-weight: normal
+      font-style: normal
+
++font('Geometria-Light', 'Geometria-Light')
++font('Geometria-Medium', 'Geometria-Medium')
++font('Geometria', 'Geometria')
++font('Roboto-Medium', 'Roboto-Medium')
++font('Roboto-Regular', 'Roboto-Regular')
+
+=f($name, $font-size: null, $line-height: null, $letter-spacing: null)
+   $font-family: null
+   @if $name == "geo300"
+      $font-family: "Geometria-Light"
+   @if $name == "geo500"
+      $font-family: "Geometria-Medium"
+   @if $name == "geo400"
+      $font-family: "Geometria"
+   @if $name == "rob500"
+      $font-family: "Roboto-Medium"
+   @if $name == "rob400"
+      $font-family: "Roboto-Regular"
+   font-family: $font-family, Arial, sans-serif
+   @if $font-family != null
+      font-weight: normal
+   @if $font-size != null
+      font-size: $font-size * 1px
+   @if $line-height != null
+      line-height: $line-height * 1px
+   @if $letter-spacing != null
+      letter-spacing: ($letter-spacing / 1000) * 1em

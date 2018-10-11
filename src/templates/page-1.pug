@@ -1,0 +1,188 @@
+extends layouts/_layout
+
+block variables
+	-title = 'Страница 1'
+
+block content
+
+	//begin main
+	main.main
+
+		//begin screen
+		+b.SECTION.screen
+			+e.content(style='background-image: url(img/bg/screen_bg.jpg)')
+				+e.container.container
+					+e.H2.title Самый доступный курс по
+						br
+						| трейдингу для новичков из 10 простых занятий!
+					+e.P.descr Курс включает 5 прибыльных стратегий, которые
+						br
+						| можно применить прямо сейчас!
+					+e.promo
+						+e.promo-icon.icon-percent
+						+e.promo-text
+							+e.promo-title По окончанию курса
+							+e.promo-inner
+								+e.promo-count +
+									span 100
+									| $
+								+e.P.promo-descr на депозит для торговли!
+					+e.A.btn.btn._blue(href='#!') Начать обучение
+				+b.BUTTON.scroll-btn.screen__scroll-btn
+					+e.arr
+					+e.arr
+
+			+e.action
+				+e.action-container.container
+					+e.P.action-title.title Сделай 10 шагов и получи депозит в 100$
+		//end screen
+		
+		//begin steps
+		+b.SECTION.steps
+			+e.container.container
+				+e.item._left._1.is-completed
+					+e.item-inner
+						+e.item-status(style='background-image: url(img/bg/steps-item_1.jpg)')
+							+e.item-label: span Урок №1
+							+e.item-status-icon._locked.icon-locked
+							+e.item-status-icon._complete.icon-complete
+						+e.item-content
+							+e.item-content-inner
+								+e.H5.item-title Реально ли заработать на Форекс?
+								+e.A.item-btn.btn._white(href='#!') Начать курс
+					+e.item-visual
+						+e.item-visual-circle 01
+						+e.item-visual-line
+
+				+e.item._right._2.is-completed
+					+e.item-inner
+						+e.item-content
+							+e.item-content-inner
+								+e.H5.item-title Первые действия на рынке Форекс
+								+e.A.item-btn.btn._white(href='#!') Начать урок
+						+e.item-status(style='background-image: url(img/bg/steps-item_2.jpg)')
+							+e.item-label: span Урок №2
+							+e.item-status-icon._locked.icon-locked
+							+e.item-status-icon._complete.icon-complete
+					+e.item-visual
+						+e.item-visual-circle 02
+						+e.item-visual-line
+
+				+e.item._left._3.is-current
+					+e.item-inner
+						+e.item-status(style='background-image: url(img/bg/steps-item_3.jpg)')
+							+e.item-label: span Урок №3
+							+e.item-status-icon._locked.icon-locked
+							+e.item-status-icon._complete.icon-complete
+						+e.item-content
+							+e.item-content-inner
+								+e.H5.item-title Валютная пара - как продать или купить?
+								+e.A.item-btn.btn._white(href='#!') Начать курс
+					+e.item-visual
+						+e.item-visual-circle 03
+						+e.item-visual-line
+
+				+e.item._right._4
+					+e.item-inner
+						+e.item-content
+							+e.item-content-inner
+								+e.H5.item-title Стратегия торговли: три свечи
+								+e.A.item-btn.btn._white(href='#!') Начать урок
+						+e.item-status(style='background-image: url(img/bg/steps-item_4.jpg)')
+							+e.item-label: span Урок №4
+							+e.item-status-icon._locked.icon-locked
+							+e.item-status-icon._complete.icon-complete
+					+e.item-visual
+						+e.item-visual-circle 04
+						+e.item-visual-line
+
+				+e.item._left._5
+					+e.item-inner
+						+e.item-status(style='background-image: url(img/bg/steps-item_5.jpg)')
+							+e.item-label: span Урок №5
+							+e.item-status-icon._locked.icon-locked
+							+e.item-status-icon._complete.icon-complete
+						+e.item-content
+							+e.item-content-inner
+								+e.H5.item-title Управление рисками
+								+e.A.item-btn.btn._white(href='#!') Начать курс
+					+e.item-visual
+						+e.item-visual-circle 05
+						+e.item-visual-line
+
+				+e.item._right._6
+					+e.item-inner
+						+e.item-content
+							+e.item-content-inner
+								+e.H5.item-title Торговля на нефти
+									br
+									| и золоте
+								+e.A.item-btn.btn._white(href='#!') Начать урок
+						+e.item-status(style='background-image: url(img/bg/steps-item_6.jpg)')
+							+e.item-label: span Урок №6
+							+e.item-status-icon._locked.icon-locked
+							+e.item-status-icon._complete.icon-complete
+					+e.item-visual
+						+e.item-visual-circle 06
+						+e.item-visual-line
+
+				+e.item._left._7
+					+e.item-inner
+						+e.item-status(style='background-image: url(img/bg/steps-item_7.jpg)')
+							+e.item-label: span Урок №7
+							+e.item-status-icon._locked.icon-locked
+							+e.item-status-icon._complete.icon-complete
+						+e.item-content
+							+e.item-content-inner
+								+e.H5.item-title Скальпинг
+								+e.A.item-btn.btn._white(href='#!') Начать курс
+					+e.item-visual
+						+e.item-visual-circle 07
+						+e.item-visual-line
+
+				+e.item._right._8
+					+e.item-inner
+						+e.item-content
+							+e.item-content-inner
+								+e.H5.item-title Стратегия торговли: 100 EMA
+								+e.A.item-btn.btn._white(href='#!') Начать урок
+						+e.item-status(style='background-image: url(img/bg/steps-item_8.jpg)')
+							+e.item-label: span Урок №8
+							+e.item-status-icon._locked.icon-locked
+							+e.item-status-icon._complete.icon-complete
+					+e.item-visual
+						+e.item-visual-circle 08
+						+e.item-visual-line
+
+				+e.item._left._9
+					+e.item-inner
+						+e.item-status(style='background-image: url(img/bg/steps-item_9.jpg)')
+							+e.item-label: span Урок №9
+							+e.item-status-icon._locked.icon-locked
+							+e.item-status-icon._complete.icon-complete
+						+e.item-content
+							+e.item-content-inner
+								+e.H5.item-title Открывай завтра
+								+e.A.item-btn.btn._white(href='#!') Начать курс
+					+e.item-visual
+						+e.item-visual-circle 09
+						+e.item-visual-line
+
+				+e.item._right._10
+					+e.item-inner
+						+e.item-content
+							+e.item-content-inner
+								+e.H5.item-title Финальный шаг!
+								+e.A.item-btn.btn._white(href='#!') Начать урок
+						+e.item-status(style='background-image: url(img/bg/steps-item_10.jpg)')
+							+e.item-label: span Урок №10
+							+e.item-status-icon._locked.icon-locked
+							+e.item-status-icon._complete.icon-complete
+					+e.item-visual
+						+e.item-visual-circle 10
+						+e.item-visual-line
+
+				+e.line
+					+e.IMG.line-img(src='img/decor/steps-line.svg' alt='image')
+		//end steps
+	//end main

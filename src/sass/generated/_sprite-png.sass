@@ -1,0 +1,78 @@
+$icons: (0:0)
+$icons: map-merge($icons,('complete': (X: 0px, Y:0px, W: 78px, H: 78px, TW: 232px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('decor-bracket_l': (X: -177px, Y:0px, W: 55px, H: 59px, TW: 232px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('decor-bracket_r': (X: -177px, Y:-69px, W: 54px, H: 59px, TW: 232px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('locked': (X: 0px, Y:-88px, W: 53px, H: 69px, TW: 232px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('pencil': (X: 0px, Y:-167px, W: 48px, H: 48px, TW: 232px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('percent': (X: -88px, Y:0px, W: 79px, H: 75px, TW: 232px, TH: 215px, IMG: '../img/sprite.png')))
+$icons: map-merge($icons,('time': (X: -63px, Y:-88px, W: 59px, H: 60px, TW: 232px, TH: 215px, IMG: '../img/sprite.png')))
+
+
+// Gets an attribute from the sass map
+@function icon-attr($icon, $attr)
+  $icon: map-get($icons, $icon)
+  @return map-get($icon, $attr)
+
+@mixin sprite($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  width: icon-attr($iconName, W)
+  height: icon-attr($iconName, H)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-position($iconName)
+  background-position: icon-attr($iconName, X) icon-attr($iconName, Y)
+@mixin sprite-retina($iconName)
+  background-image: url(icon-attr($iconName, IMG))
+  $width: icon-attr($iconName, W)
+  $height: icon-attr($iconName, H)
+  width: $width/2
+  height: $height/2
+  $x: icon-attr($iconName, X)
+  $y: icon-attr($iconName, Y)
+  background-position: $x/2 $y/2
+  $tw: icon-attr($iconName, TW)   
+  $th: icon-attr($iconName, TH)
+  background-size: $tw/2 $th/2    
+
+
+@mixin s($i)
+  +sprite($i)
+@mixin sp($i)
+  +sprite-position($i)
+@mixin sr($i)
+  +sprite-retina($i)  
+
+.icon-complete
+  width: 78px
+  height: 78px
+  background-image: url('../img/sprite.png')
+  background-position: 0px 0px
+.icon-decor-bracket_l
+  width: 55px
+  height: 59px
+  background-image: url('../img/sprite.png')
+  background-position: -177px 0px
+.icon-decor-bracket_r
+  width: 54px
+  height: 59px
+  background-image: url('../img/sprite.png')
+  background-position: -177px -69px
+.icon-locked
+  width: 53px
+  height: 69px
+  background-image: url('../img/sprite.png')
+  background-position: 0px -88px
+.icon-pencil
+  width: 48px
+  height: 48px
+  background-image: url('../img/sprite.png')
+  background-position: 0px -167px
+.icon-percent
+  width: 79px
+  height: 75px
+  background-image: url('../img/sprite.png')
+  background-position: -88px 0px
+.icon-time
+  width: 59px
+  height: 60px
+  background-image: url('../img/sprite.png')
+  background-position: -63px -88px

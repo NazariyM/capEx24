@@ -1,0 +1,709 @@
+// *** begin screen *** //
+.screen
+   overflow: hidden
+   background-color: #f5f6f6
+   &__content
+      position: relative
+      height: 737px
+      color: $white
+      +cover
+      +xs
+         height: auto
+         padding: 70px 0 100px
+   &__container
+      display: flex
+      flex-direction: column
+      justify-content: center
+      align-items: flex-start
+      height: 100%
+      max-width: 700px
+   &__title
+      margin-bottom: 25px
+      +f('geo500', 27)
+      letter-spacing: 0.01em
+      br
+         +xs
+            display: none
+   &__descr
+      margin-bottom: 30px
+      +f('geo400', 21)
+      color: rgba($white, .85)
+      letter-spacing: -0.01em
+      br
+         +xs
+            display: none
+   &__promo
+      display: flex
+      align-items: center
+      margin-bottom: 25px
+      &-icon
+         margin-right: 20px
+         flex-shrink: 0
+         +xs
+            margin-right: 5px
+      &-text
+         flex: 0 0 270px
+         +f('geo400', 18, 18)
+         color: rgba($white, .85)
+         letter-spacing: -0.45px
+         +xs
+            font-size: 17px
+            line-height: 17px
+   
+      &-title
+         margin-bottom: 5px
+      &-inner
+         display: flex
+         align-items: flex-end
+         +xs
+            flex-direction: column
+            align-items: flex-start
+      &-count
+         margin-right: 10px
+         +f('rob400')
+         font-size: 48px
+         line-height: 1
+         letter-spacing: -0.86px
+         white-space: nowrap
+         +xs
+            font-size: 32px
+            margin-right: 0
+            margin-bottom: 5px
+         span
+            +f('rob500')
+      &-descr
+         padding-bottom: 4px
+   &__action
+      position: relative
+      display: flex
+      align-items: flex-end
+      height: 148px
+      margin-top: -50px
+      transform: skewY(-3.5deg)
+      padding: 0 0 37px
+      overflow: hidden
+      background: #f5f6f6
+      +xs
+         padding: 0 0 25px
+      &::after
+         position: absolute
+         top: -43px
+         left: 49.3%
+         width: 1081px
+         height: 200px
+         transform: translateX(-50%) skewY(3.5deg)
+         background: url("../img/decor/screen_decor.png") no-repeat 50% 50%
+         content: ''
+      &-title
+         text-align: center
+         letter-spacing: -0.6px
+         +xs
+            max-width: 340px
+            margin: 0 auto
+            font-size: 20px
+      &-container
+         transform: skewY(3.5deg)
+         
+   &__scroll-btn
+      position: absolute
+      bottom: -10px
+      left: 50%
+      transform: translateX(-50%)
+      z-index: 1
+// end screen //
+
+// *** begin lesson *** //
+.lesson
+   &__container
+      padding-bottom: 20px
+   &__header
+      display: flex
+      align-items: flex-end
+      padding-bottom: 35px
+      margin-bottom: 23px
+      background: url("../img/decor/line_lg.svg") no-repeat 50% 100%
+      +xs
+         flex-direction: column
+         align-items: center
+         padding-bottom: 15px
+         margin-bottom: 20px
+      &-img
+         +coverdiv
+         &-wrap
+            flex: 0 1 percentage(558 / 900)
+            width: percentage(558 / 900)
+            +ratio(558, 312)
+            +xs
+               flex: 0 1 auto
+               width: calc(100% + 30px)
+               margin: 0 -15px
+               
+      &-text
+         flex: 1
+         padding: 0 0 23px 30px
+         +sm
+            padding: 0 0 20px 30px
+         +xs
+            flex: 0 1 auto
+            width: 100%
+            padding: 20px 15px
+   
+   &__title
+      margin-bottom: 20px
+      +sm
+         font-size: 21px
+         margin-bottom: 10px
+   &__info
+      position: relative
+      left: -15px
+      display: flex
+      margin: 0 -10px
+      +xs
+         left: auto
+      &-item
+         position: relative
+         min-height: 170px
+         display: flex
+         flex-direction: column
+         justify-content: center
+         flex: 0 1 50%
+         width: 50%
+         padding: 0 10px
+         text-align: center
+         +sm
+            min-height: 140px
+         &:nth-child(1)
+            padding: 0 20px
+            +sm
+               padding: 0 8px
+            &::after
+               position: absolute
+               top: 0
+               bottom: 0
+               right: 8px
+               border-right: 1px solid rgba($black, .2)
+               content: ''
+               +sm
+                  right: 0
+         &-icon
+            margin: 0 auto 10px
+         &-descr
+            +f('geo400', 14)
+   &__content
+      max-width: 780px
+      margin-bottom: 43px
+      p
+         &:not(:last-child)
+            margin-bottom: 27px
+   &__ask-block
+   &__nav
+      padding: 45px 0 30px
+      background-color: $color1
+      opacity: 0
+      transform: translateY(100%)
+      transition: .6s ease-in-out
+      &.is-active
+         opacity: 1
+         transform: translateY(0)
+      &-container
+         display: flex
+         align-items: center
+         justify-content: space-between
+         +xs
+            flex-wrap: wrap
+   &__nav-link
+      display: block
+      text-align: center
+      color: #fff
+      font-size: 14px
+      +xs
+         order: 1
+         width: 100px
+      &:nth-child(1)
+         +xs
+            margin-left: -15px
+      &:hover
+         svg
+            fill: rgba($white, .6)
+      svg
+         width: 56px
+         height: 56px
+         fill: $white
+         transition: .3s ease-in-out
+         +xs
+            width: 46px
+            height: 46px
+      span
+         display: block
+         margin-top: 10px
+         
+   &__advice
+      margin-top: -30px
+      max-width: 505px
+      text-align: center
+      color: $white
+      +sm
+         margin-top: -15px
+         max-width: 425px
+      +xs
+         max-width: none
+         flex: 0 1 auto
+         width: 100%
+         margin-bottom: 20px
+      &-title
+         margin-bottom: 20px
+         color: #fff
+      &-text
+         position: relative
+         padding: 0 15px
+         font-size: 16px
+         br
+            +sm
+               display: none
+         svg
+            position: absolute
+            top: -9px
+            left: -18px
+            font-size: 22px
+            fill: rgba($white, .8)
+            +xs
+               left: -7px
+// end lesson //
+
+// *** begin steps *** //
+.steps
+   padding: 57px 0
+   +sm
+      padding: 40px 0
+   &__container
+      position: relative
+      display: flex
+      justify-content: space-between
+      align-items: flex-start
+      flex-wrap: wrap
+      +sm
+         padding: 0 40px
+      +xs
+         padding: 0 15px
+         flex-direction: column
+         align-items: center
+         justify-content: center
+   &__item
+      $parent: &
+      position: relative
+      flex: 0 0 321px
+      width: 321px
+      height: 170px
+      +f('geo400')
+      cursor: default
+      pointer-events: none
+      +xs
+         flex: 0 1 auto
+         width: 100%
+         max-width: 321px
+      &::after
+         position: absolute
+         z-index: 1
+         top: calc(50% - 30px)
+         content: ''
+         +sm
+            display: none
+         
+      &:not(:last-child)
+         margin-bottom: 48px
+         +xs
+            margin-bottom: 30px
+      &:nth-child(odd)
+         margin-top: -110px
+         +xs
+            margin-top: 0
+      &.is-completed, &.is-current
+         pointer-events: auto
+      &_left
+         &::before
+            right: -100px
+            top: calc(50% - 12px)
+         &::after
+            right: -61px
+            +sprite('decor-bracket_l')
+            content: ''
+         
+      &_right
+         &::before
+            left: -98px
+            top: calc(50% - 15px)
+         &::after
+            left: -61px
+            +sprite('decor-bracket_r')
+      &_1
+         margin-top: 0!important
+         &.is-completed #{$parent}-inner, &.is-current #{$parent}-inner
+            border-color: #3eb4f0
+            #{$parent}-status::before
+               background-color: #3eb4f0
+      &_2
+         margin-top: 110px
+         +xs
+            margin-top: 0
+         &.is-completed #{$parent}-inner, &.is-current #{$parent}-inner
+            border-color: #3ed2f0
+            #{$parent}-status::before
+               background-color: #3ed2f0
+      &_3
+         &.is-completed #{$parent}-inner, &.is-current #{$parent}-inner
+            border-color: #3ef0f0
+            #{$parent}-status::before
+               background-color: #3ef0f0
+      &_4
+         &.is-completed #{$parent}-inner, &.is-current #{$parent}-inner
+            border-color: #3ef0d2
+            #{$parent}-status::before
+               background-color: #3ef0d2
+      &_5
+         &.is-completed #{$parent}-inner, &.is-current #{$parent}-inner
+            border-color: #3ef0b5
+            #{$parent}-status::before
+               background-color: #3ef0b5
+      &_6
+         &.is-completed #{$parent}-inner, &.is-current #{$parent}-inner
+            border-color: #3ef097
+            #{$parent}-status::before
+               background-color: #3ef097
+      &_7
+         &.is-completed #{$parent}-inner, &.is-current #{$parent}-inner
+            border-color: #3ef079
+            #{$parent}-status::before
+               background-color: #3ef079
+      &_8
+         &.is-completed #{$parent}-inner, &.is-current #{$parent}-inner
+            border-color: #3ef05c
+            #{$parent}-status::before
+               background-color: #3ef05c
+      &_9
+         &.is-completed #{$parent}-inner, &.is-current #{$parent}-inner
+            border-color: #3ef03e
+            #{$parent}-status::before
+               background-color: #3ef03e
+      &_10
+         margin-bottom: 0!important
+         &.is-completed #{$parent}-inner, &.is-current #{$parent}-inner
+            border-color: #5cf03e
+            #{$parent}-status::before
+               background-color: #5cf03e
+         .is-ie &
+            margin-left: auto
+      &-inner
+         display: flex
+         overflow: hidden
+         height: 100%
+         border-radius: 10px
+         border: 2px solid transparent
+      &-label
+         position: absolute
+         min-width: 87px
+         background-color: #f5f6f6
+         letter-spacing: -0.35px
+         font-size: 14px
+         span
+            display: block
+         #{$parent}_left &
+            top: 27px
+            left: 0
+            transform: skewX(10deg) translateX(-5px)
+            padding: 5px 15px 5px 13px
+            span
+               transform: skewX(-10deg)
+         #{$parent}_right &
+            top: 20px
+            right: 0
+            transform: skewX(-10deg) translateX(5px)
+            padding: 5px 13px 5px 15px
+            span
+               transform: skewX(10deg)
+         #{$parent}_10 &
+            padding: 5px 8px 5px 15px
+            +xs
+               padding: 5px 13px 5px 15px
+      &-status
+         position: relative
+         flex: 0 0 132px
+         background-repeat: no-repeat
+         background-size: cover
+         #{$parent}.is-current &
+            &::before
+               opacity: 0
+             
+         &::before
+            +coverdiv
+            background-color: $black
+            opacity: .4
+            transition: .3s ease-in-out
+            content: ''
+         #{$parent}_1 &
+            background-position: 0 50%
+         #{$parent}_2 &
+            background-position: 100% 50%
+         #{$parent}_4 &
+            background-position: 98% 50%
+         #{$parent}_6 &, #{$parent}_10 &
+            background-position: 99% 50%
+         #{$parent}_8 &
+            background-position: 96% 50%
+            
+         &-icon
+            pointer-events: none
+            position: absolute
+            z-index: 1
+            font-size: 78px
+            fill: $white
+            transition: .3s ease-in-out
+            &_complete
+               opacity: 0
+               bottom: 22px
+               #{$parent}_left &
+                  left: 20px
+               #{$parent}_right &
+                  right: 20px
+               #{$parent}.is-completed &
+                  opacity: 1
+            &_locked
+               bottom: 30px
+               #{$parent}_left &
+                  left: 35px
+               #{$parent}_right &
+                  right: 35px
+               #{$parent}.is-completed &,
+               #{$parent}.is-current &
+                  opacity: 0
+            
+      &-content
+         position: relative
+         z-index: 1
+         flex: 1
+         display: flex
+         align-items: flex-end
+         background-color: #f5f6f6
+         text-align: center
+         transition: .3s ease-in-out
+         width: calc(100% + 20px)
+         #{$parent}_left &
+            margin-left: -10px
+            padding: 15px 8px 15px 0
+            transform: skew(10deg)
+         #{$parent}_right &
+            padding: 15px 0 15px 27px
+            transform: skew(-10deg)
+         #{$parent}_5 &
+            padding: 15px 8px 15px 9px
+         #{$parent}_7 &
+            padding: 15px 8px 15px 35px
+         #{$parent}_9 &
+            padding: 15px 8px 15px 23px
+         #{$parent}_10 &
+            padding: 15px 8px 15px 41px
+         #{$parent}_1:hover &,
+         #{$parent}_1.is-current &
+            background-color: #3eb4f0
+            &::before, &::after
+               background-color: #3eb4f0
+         #{$parent}_2:hover &,
+         #{$parent}_2.is-current &
+            background-color: #3ed2f0
+            &::before, &::after
+               background-color: #3ed2f0
+         #{$parent}_3:hover &,
+         #{$parent}_3.is-current &
+            background-color: #3ef0f0
+            &::before, &::after
+               background-color: #3ef0f0
+         #{$parent}_4:hover &,
+         #{$parent}_4.is-current &
+            background-color: #3ef0d2
+            &::before, &::after
+               background-color: #3ef0d2
+         #{$parent}_5:hover &,
+         #{$parent}_5.is-current &
+            background-color: #3ef0b5
+            &::before, &::after
+               background-color: #3ef0b5
+         #{$parent}_6:hover &,
+         #{$parent}_6.is-current &
+            background-color: #3ef097
+            &::before, &::after
+               background-color: #3ef097
+         #{$parent}_7:hover &,
+         #{$parent}_7.is-current &
+            background-color: #3ef079
+            &::before, &::after
+               background-color: #3ef079
+         #{$parent}_8:hover &,
+         #{$parent}_8.is-current &
+            background-color: #3ef05c
+            &::before, &::after
+               background-color: #3ef05c
+         #{$parent}_9:hover &,
+         #{$parent}_9.is-current &
+            background-color: #3ef03e
+            &::before, &::after
+               background-color: #3ef03e
+         #{$parent}_10:hover &,
+         #{$parent}_10.is-current &
+            background-color: #5cf03e
+            &::before, &::after
+               background-color: #5cf03e
+               
+         &::before, &::after
+            position: absolute
+            top: 0
+            bottom: 0
+            z-index: 1
+            width: 50px
+            background-color: #f5f6f6
+            transition: .3s ease-in-out
+            content: ''
+            
+         &::before
+            #{$parent}_left &
+               left: -7px
+            #{$parent}_right &
+               right: -17px
+         &::after
+            #{$parent}_left &
+               left: 95%
+            #{$parent}_right &
+               right: 95%
+            
+         &-inner
+            position: relative
+            z-index: 2
+            #{$parent}.is-completed &,
+            #{$parent}.is-current &
+               top: auto
+            #{$parent}_left &
+               top: -5px
+               transform: skew(-10deg)
+            #{$parent}_right &
+               top: 5px
+               transform: skew(10deg)
+            #{$parent}_10 &
+               top: -5px
+      &-title
+         margin-bottom: 20px
+         font-size: 16px
+         letter-spacing: -0.4px
+         transition: .3s ease-in-out
+         +f('geo400')
+         #{$parent}:hover &,
+         #{$parent}.is-current &
+            color: #fff
+      &-btn
+         pointer-events: none
+         opacity: 0
+         #{$parent}.is-completed &,
+         #{$parent}.is-current &
+            pointer-events: auto
+            opacity: 1
+            
+      &-visual
+         position: absolute
+         top: 0
+         z-index: 2
+         +sm
+            display: none
+         #{$parent}_left &
+            top: 47px
+            right: -130px
+         #{$parent}_right &
+            top: 46px
+            left: -130px
+            
+         &-circle
+            +flexCenter
+            width: 78px
+            height: 78px
+            border: 10px solid transparent
+            border-radius: 50%
+            +f('rob400', 30, 30)
+            color: #2a2a2a
+            transition: .3s ease-in-out
+            #{$parent}_1.is-completed &,
+            #{$parent}_1.is-current &
+                border-color: #3eb4f0
+            #{$parent}_2.is-completed &,
+            #{$parent}_2.is-current &
+               border-color: #3ed2f0
+            #{$parent}_3.is-completed &,
+            #{$parent}_3.is-current &
+               border-color: #3ef0f0
+            #{$parent}_4.is-completed &,
+            #{$parent}_4.is-current &
+               border-color: #3ef0d2
+            #{$parent}_5.is-completed &,
+            #{$parent}_5.is-current &
+               border-color: #3ef0b5
+            #{$parent}_6.is-completed &,
+            #{$parent}_6.is-current &
+               border-color: #3ef097
+            #{$parent}_7.is-completed &,
+            #{$parent}_7.is-current &
+               border-color: #3ef079
+            #{$parent}_8.is-completed &,
+            #{$parent}_8.is-current &
+               border-color: #3ef05c
+            #{$parent}_9.is-completed &,
+            #{$parent}_9.is-current &
+               border-color: #3ef03e
+            #{$parent}_10.is-completed &,
+            #{$parent}_10.is-current &
+               border-color: #5cf03e
+         &-line
+            position: absolute
+            overflow: hidden
+            pointer-events: none
+            #{$parent}_left &
+               right: -5px
+               bottom: -44px
+               transform: rotate(-35deg)
+            #{$parent}_right &
+               right: 72px
+               bottom: -44px
+               transform: rotate(35deg)
+            &::after
+               width: 10px
+               display: block
+               height: 58px
+               transform: translateY(-60px)
+               transition: .5s .3s ease-in-out
+               content: ''
+               
+            #{$parent}.is-completed &::after
+               transform: translateY(0)
+            #{$parent}_1 &::after
+               background-image: linear-gradient(to top, #3ed2f0 0%, #3eb4f0 100%)
+            #{$parent}_2 &::after
+               background-image: linear-gradient(to top, #3ef0f0 0%, #3ed2f0 100%)
+            #{$parent}_3 &::after
+               background-image: linear-gradient(to top, #3ef0d2 0%, #3ef0f0 100%)
+            #{$parent}_4 &::after
+               background-image: linear-gradient(to top, #3ef0b5 0%, #3ef0d2 100%)
+            #{$parent}_5 &::after
+               background-image: linear-gradient(to top, #3ef097 0%, #3ef0b5 100%)
+            #{$parent}_6 &::after
+               background-image: linear-gradient(to top, #3ef079 0%, #3ef097 100%)
+            #{$parent}_7 &::after
+               background-image: linear-gradient(to top, #3ef05c 0%, #3ef079 100%)
+            #{$parent}_8 &::after
+               background-image: linear-gradient(to top, #3ef03e 0%, #3ef05c 100%)
+            #{$parent}_9 &::after
+               background-image: linear-gradient(to top, #5cf03e 0%, #3ef03e 100%)
+            #{$parent}_10 &::after
+               display: none
+   
+   &__line
+      position: absolute
+      top: 47px
+      left: calc(50% - 77px)
+      +sm
+         display: none
+      
+// end steps //

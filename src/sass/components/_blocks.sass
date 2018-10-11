@@ -1,0 +1,110 @@
+// *** begin ask-block *** //
+.ask-block
+   $parent: &
+   &__title
+      margin-bottom: 25px
+   &__inner
+      max-width: 805px
+      margin-left: 30px
+      +sm
+         margin-left: 0
+   &__item
+      margin-bottom: 27px
+      &-title
+         margin-bottom: 12px
+   &__question
+      display: block
+      &:not(:last-child)
+         margin-bottom: 10px
+   &__input
+      display: none
+      &:checked ~ #{$parent}__text
+         background-color: $color1
+         color: $white
+         
+   &__text
+      padding: 3px 13px 2px
+      border: 1px solid #3eb4f0
+      cursor: pointer
+      color: #010101
+      border-radius: 10px
+      transition: .3s ease-in-out
+   &__actions
+      text-align: center
+      &-btn
+// end ask-block //
+
+// *** begin scroll-btn *** //
+.scroll-btn
+   width: 30px
+   height: 60px
+   display: flex
+   align-items: center
+   flex-direction: column
+   cursor: pointer
+   &__arr
+      width: 30px
+      height: 30px
+      position: relative
+      box-shadow: 6px 6px $color1
+      transform: rotate(45deg)
+      &:nth-child(1)
+         animation: arrs-anim-2 1s steps(5, start) infinite
+      &:nth-child(2)
+         margin-top: -15px
+         animation: arrs-anim-1 1s steps(5, start) infinite
+
+@keyframes arrs-anim-1
+   0%
+      opacity: 0.1
+   11%
+      opacity: 0.15
+   22%
+      opacity: 0.25
+   33%
+      opacity: 0.5
+   44%
+      opacity: 1
+   55%
+      opacity: 0.5
+   66%
+      opacity: 0.25
+   77%
+      opacity: 0.15
+   88%
+      opacity: 0.1
+   100%
+      opacity: 0.1
+
+
+@keyframes arrs-anim-2
+   0%
+      opacity: 0.25
+   
+   11%
+      opacity: 0.5
+   
+   22%
+      opacity: 1
+   
+   33%
+      opacity: 0.5
+   
+   44%
+      opacity: 0.25
+   
+   55%
+      opacity: 0.15
+   
+   66%
+      opacity: 0.1
+   
+   77%
+      opacity: 0.1
+   
+   88%
+      opacity: 0.1
+   
+   100%
+      opacity: 0.15
+// end scroll-btn //
